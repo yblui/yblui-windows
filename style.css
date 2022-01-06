@@ -1,0 +1,24 @@
+.y-windows{
+    position:fixed;
+    top:1vmin;
+    left:1vmin;
+    z-index: 1000;
+    background-color: #fff;
+    width:50vw;
+    height:50vh;
+    border:solid 1px rgb(94,94,94);
+    box-shadow: 0 0 9px gray;
+    font-family: "Microsoft Yahei UI", "Segoe UI", sans-serif;
+    padding:5px 10px;
+}
+
+.y-title{
+    font-size: small;
+}
+
+.y-buttons{
+    float:right;
+    position:relative;
+    top:-5px;
+    right:-10px;
+}
