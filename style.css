@@ -29,7 +29,7 @@
 }
 
 .y-max:hover {
-    background-color: rgb(230,230,230);
+    background-color: rgb(230, 230, 230);
 }
 
 .y-close:hover {
@@ -37,24 +37,37 @@
     color: white;
 }
 
-.y-flex{
-    display:flex;
+.y-flex {
+    display: flex;
     flex-direction: row;
     height: calc(100% - 7vmin);
 }
 
 .y-menu {
-    background-color: rgb(236,236,236);
+    background-color: rgb(236, 236, 236);
     min-width: 15vw;
-    height:100%
+    height: 100%
 }
 
-.y-head{
+.y-container {
+    overflow-y: auto;
+}
+
+.y-head {
     font-size: x-large;
     font-weight: normal;
 }
 
-.y-head2{
+.y-head2 {
     font-weight: normal;
     font-size: large;
+}
+
+.y-link{
+    cursor: pointer;
+    color:rgb(6,83,120);
+}
+
+.y-link:hover{
+    color:gray
 }
