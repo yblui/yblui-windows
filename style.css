@@ -22,19 +22,39 @@
 .y-buttons {
     float: right;
     position: relative;
-    /*top: -5px;
-    right: -10px;*/
 }
 
-.y-max,.y-close {
+.y-max, .y-close {
     padding: 7px 10px;
 }
 
-.y-max:hover{
-    background-color: lightgray;
+.y-max:hover {
+    background-color: rgb(230,230,230);
 }
 
-.y-close:hover{
+.y-close:hover {
     background-color: red;
-    color:white
+    color: white;
+}
+
+.y-flex{
+    display:flex;
+    flex-direction: row;
+    height: calc(100% - 7vmin);
+}
+
+.y-menu {
+    background-color: rgb(236,236,236);
+    min-width: 15vw;
+    height:100%
+}
+
+.y-head{
+    font-size: x-large;
+    font-weight: normal;
+}
+
+.y-head2{
+    font-weight: normal;
+    font-size: large;
 }
