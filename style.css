@@ -13,11 +13,10 @@
     -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
-    resize:both;
 }
 
 .y-windows, .y-windows * {
-    transition: 0.1s;
+    transition: width 0.1s, height 0.1s;
 }
 
 .y-title, .y-max, .y-close {
@@ -58,7 +57,7 @@
     top: 7px;
 }
 
-.y-container {
+.y-container, .y-menu {
     overflow-y: auto;
 }
 
@@ -87,7 +86,7 @@
 
 .y-item {
     margin: 0;
-    padding: 10px 0
+    padding: 10px 0;
 }
 
 .y-item:hover {

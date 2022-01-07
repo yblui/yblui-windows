@@ -4,6 +4,7 @@ for (var x of document.querySelectorAll(".y-close")) {
 for (var y of document.querySelectorAll(".y-max")) {
     eventListenerMax(y);
 }
+$(".y-windows").draggable({cancel:".y-flex",containment:"document"});
 
 function eventListenerClose(m) {
     m.addEventListener("click", function () {
