@@ -15,6 +15,10 @@
     user-select: none;
 }
 
+.y-windows, .y-windows * {
+    transition: 0.1s;
+}
+
 .y-title, .y-max, .y-close {
     font-size: small;
 }
@@ -46,7 +50,11 @@
 .y-menu {
     background-color: rgb(236, 236, 236);
     min-width: 15vw;
-    height: 100%
+    height: 100%;
+    padding: 10px;
+    position: relative;
+    left: -10px;
+    top: 7px;
 }
 
 .y-container {
@@ -63,11 +71,24 @@
     font-size: large;
 }
 
-.y-link{
+.y-link {
     cursor: pointer;
-    color:rgb(6,83,120);
+    color: rgb(6, 83, 120);
 }
 
-.y-link:hover{
-    color:gray
+.y-link:hover, .y-light {
+    color: gray;
+}
+
+.y-mtitle {
+    font-weight: bold;
+}
+
+.y-item {
+    margin: 0;
+    padding: 10px 0
+}
+
+.y-item:hover {
+    background-color: lightgray;
 }
