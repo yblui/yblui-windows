@@ -13,6 +13,7 @@
     -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+    resize:both;
 }
 
 .y-windows, .y-windows * {
