@@ -92,3 +92,24 @@
 .y-item:hover {
     background-color: lightgray;
 }
+
+.y-select {
+    border-left: solid 5px rgb(6, 83, 120);
+}
+
+.y-search {
+    border: solid 3px gray;
+    padding: 5px;
+    font-family: "Microsoft Yahei UI", "Segoe UI", sans-serif;
+    outline: none;
+    width: calc(15vw - 20px);
+}
+
+.y-search:focus {
+    border-color: rgb(6, 83, 120);
+}
+
+.y-search::selection {
+    background-color: rgb(6, 83, 120);
+    color: white;
+}

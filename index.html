@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yblui-windows</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.staticfile.org/jquery/1.10.0/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/jqueryui/1.10.0/jquery-ui.min.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.0/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.staticfile.org/jqueryui/1.10.0/jquery-ui.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,10 +21,11 @@
         </div>
         <div class="y-flex">
             <div class="y-menu">
+                <input type="text" class="y-search" placeholder="Search..."/>
                 <p class="y-mtitle">Menu</p>
-                <p class="y-item y-select">Images</p>
-                <p class="y-item">Videos</p>
-                <p class="y-item">Travel</p>
+                <p class="y-item y-select" onclick="select(this);">Images</p>
+                <p class="y-item" onclick="select(this);">Videos</p>
+                <p class="y-item" onclick="select(this);">Travel</p>
             </div>
             <div class="y-container">
                 <h1 class="y-head">My Heading</h1>
@@ -37,6 +38,24 @@
                 Link: <span class="y-link">Quam eum ex iure harum quis fugiat veritatis modi nemo!</span>
                 <p class="y-light">Amet quo asperiores, omnis temporibus, rerum eius nemo aliquam, eos aut suscipit
                     voluptatum dolor non maxime?</p>
+            </div>
+        </div>
+    </div>
+    <div class="y-windows">
+        <span class="y-title">The Second Window</span>
+        <div class="y-buttons">
+            <span class="y-max">Maximize</span>
+            <span class="y-close">Close</span>
+        </div>
+        <div class="y-flex">
+            <div class="y-menu">
+                <p class="y-mtitle">Menu</p>
+                <p class="y-item y-select" onclick="select(this);">Images</p>
+                <p class="y-item" onclick="select(this);">Videos</p>
+            </div>
+            <div class="y-container">
+                <h1 class="y-head">The Second Window</h1>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, quisquam laborum?
             </div>
         </div>
     </div>

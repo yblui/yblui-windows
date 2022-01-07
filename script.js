@@ -4,7 +4,11 @@ for (var x of document.querySelectorAll(".y-close")) {
 for (var y of document.querySelectorAll(".y-max")) {
     eventListenerMax(y);
 }
-$(".y-windows").draggable({cancel:".y-flex",containment:"document"});
+$(".y-windows").draggable({
+    cancel: ".y-flex",
+    containment: "document",
+    distance: 10
+});
 
 function eventListenerClose(m) {
     m.addEventListener("click", function () {
@@ -28,4 +32,11 @@ function eventListenerMax(n) {
             n.innerText = "Maximize";
         }
     })
+}
+
+function select(element) {
+    for (var a of element.parentNode.getElementsByClassName("y-item")) {
+        a.classList.remove("y-select")
+    }
+    element.classList.add("y-select")
 }
