@@ -114,41 +114,45 @@
     color: white;
 }
 
-.y-range{
+.y-range {
     appearance: none;
-    width:30vw;
+    width: 30vw;
 }
 
-.y-range::-webkit-slider-runnable-track{
+.y-range::-webkit-slider-runnable-track {
     appearance: none;
     background-color: lightgray;
-    height:5px;
+    height: 5px;
 }
 
-.y-range::-webkit-slider-thumb{
+.y-range::-webkit-slider-thumb {
     appearance: none;
-    height:30px;
-    width:8px;
-    margin:-15px 0;
+    height: 30px;
+    width: 8px;
+    margin: -15px 0;
     background-color: rgb(6, 83, 120);
     border-radius: 4px;
 }
 
-.y-range::-webkit-slider-thumb:hover{
+.y-range::-webkit-slider-thumb:hover {
     background-color: rgb(64, 134, 167);
 }
 
-.y-button{
+.y-button {
     background-color: lightgray;
-    padding:5px 27px;
-    border:solid 3px lightgray;
+    padding: 5px 27px;
+    border: solid 3px lightgray;
     font-family: "Microsoft Yahei UI", "Segoe UI", sans-serif;
 }
 
-.y-button:hover{
-    border:solid 3px gray;
+.y-button:hover {
+    border: solid 3px gray;
 }
 
-.y-button:active{
+.y-button:active {
     background-color: gray;
+}
+
+.y-warning {
+    color: rgb(197, 5, 0)
 }
