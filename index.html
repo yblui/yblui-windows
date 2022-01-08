@@ -14,14 +14,14 @@
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, quisquam laborum? Culpa nobis ab iusto molestiae
         quis blanditiis enim possimus praesentium rerum non qui, nisi impedit obcaecati officia harum dolorum?</p>
     <div class="y-windows">
-        <span class="y-title">Yblui Windows Demo</span>
+        <span class="y-title" ondblclick="max(this.parentNode)">Yblui Windows Demo</span>
         <div class="y-buttons">
             <span class="y-max">Maximize</span>
             <span class="y-close">Close</span>
         </div>
         <div class="y-flex">
             <div class="y-menu">
-                <input type="text" class="y-search" placeholder="Search..."/>
+                <input type="text" class="y-search" placeholder="Search..." />
                 <p class="y-mtitle">Menu</p>
                 <p class="y-item y-select" onclick="select(this);">Images</p>
                 <p class="y-item" onclick="select(this);">Videos</p>
@@ -42,12 +42,19 @@
                     voluptatum dolor non maxime?</p>
                 <p class="y-warning">Necessitatibus delectus eveniet facilis dolorem error quas mollitia itaque,
                     accusamus hic ratione ad commodi nisi dicta?</p>
-                <input type="range" class="y-range" />
+                <label>
+                    Input Range:
+                    <input type="range" class="y-range" />
+                </label>
+                <label>
+                    Checkbox:
+                    <input type="checkbox" class="y-checkbox" />
+                </label>
             </div>
         </div>
     </div>
     <div class="y-windows">
-        <span class="y-title">The Second Window</span>
+        <span class="y-title" ondblclick="max(this.parentNode);">The Second Window</span>
         <div class="y-buttons">
             <span class="y-max">Maximize</span>
             <span class="y-close">Close</span>
@@ -69,4 +76,3 @@
 </body>
 
 </html>
- 

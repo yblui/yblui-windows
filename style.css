@@ -135,7 +135,7 @@
 }
 
 .y-range::-webkit-slider-thumb:hover {
-    background-color: rgb(64, 134, 167);
+    background-color: black;
 }
 
 .y-button {
@@ -154,5 +154,27 @@
 }
 
 .y-warning {
-    color: rgb(197, 5, 0)
+    color: rgb(197, 5, 0);
+}
+
+.y-checkbox {
+    appearance: none;
+    border: solid 3px gray;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.y-checkbox:hover,.y-checkbox:checked:hover{
+    border-color:black
+}
+
+.y-checkbox:checked:after {
+    content: "✔";
+}
+
+.y-checkbox:checked {
+    background-color: rgb(6, 83, 120);
+    color: white;
+    border-color:rgb(6, 83, 120);
 }

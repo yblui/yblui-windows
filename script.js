@@ -18,25 +18,29 @@ function eventListenerClose(m) {
 
 function eventListenerMax(n) {
     n.addEventListener("click", function () {
-        if (n.innerText == "Maximize") {
-            n.parentNode.parentNode.style.left = "0";
-            n.parentNode.parentNode.style.top = "0";
-            n.parentNode.parentNode.style.width = "calc(100vw - 20px)";
-            n.parentNode.parentNode.style.height = "calc(100vh - 14px)";
-            n.innerText = "Resize";
-        } else {
-            n.parentNode.parentNode.style.left = "1vmin";
-            n.parentNode.parentNode.style.top = "1vmin";
-            n.parentNode.parentNode.style.width = "50vw";
-            n.parentNode.parentNode.style.height = "50vh";
-            n.innerText = "Maximize";
-        }
+        max(n.parentNode.parentNode);
     })
 }
 
 function select(element) {
     for (var a of element.parentNode.getElementsByClassName("y-item")) {
-        a.classList.remove("y-select")
+        a.classList.remove("y-select");
     }
-    element.classList.add("y-select")
+    element.classList.add("y-select");
+}
+
+function max(q) {
+    if (q.getElementsByClassName("y-max")[0].innerText == "Maximize") {
+        q.style.left = "0";
+        q.style.top = "0";
+        q.style.width = "calc(100vw - 20px)";
+        q.style.height = "calc(100vh - 14px)";
+        q.getElementsByClassName("y-max")[0].innerText = "Resize";
+    } else {
+        q.style.left = "1vmin";
+        q.style.top = "1vmin";
+        q.style.width = "50vw";
+        q.style.height = "50vh";
+        q.getElementsByClassName("y-max")[0].innerText = "Maximize";
+    }
 }
