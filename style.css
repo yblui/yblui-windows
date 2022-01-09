@@ -178,3 +178,8 @@
     color: white;
     border-color:rgb(6, 83, 120);
 }
+
+.y-input-select{
+    padding:10px;
+    border:solid 3px gray;
+}
