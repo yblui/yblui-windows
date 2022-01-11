@@ -4,11 +4,15 @@ for (var x of document.querySelectorAll(".y-close")) {
 for (var y of document.querySelectorAll(".y-max")) {
     eventListenerMax(y);
 }
+for (var w of document.querySelectorAll(".y-windows")) {
+    eventListenerFocus(w);
+}
 $(".y-windows").draggable({
     cancel: ".y-flex",
     containment: "document",
     distance: 10
 });
+var z = 10000;
 
 function eventListenerClose(m) {
     m.addEventListener("click", function () {
@@ -19,6 +23,12 @@ function eventListenerClose(m) {
 function eventListenerMax(n) {
     n.addEventListener("click", function () {
         max(n.parentNode.parentNode);
+    })
+}
+
+function eventListenerFocus(r) {
+    r.addEventListener("click", function () {
+        yfocus(r);
     })
 }
 
@@ -43,4 +53,9 @@ function max(q) {
         q.style.height = "50vh";
         q.getElementsByClassName("y-max")[0].innerText = "Maximize";
     }
+}
+
+function yfocus(focusElm) {
+    z += 100;
+    focusElm.style.zIndex = z;
 }
