@@ -172,61 +172,69 @@
 .y-checkbox:checked {
     background-color: rgb(6, 83, 120);
     color: white;
-    border-color:rgb(6, 83, 120);
+    border-color: rgb(6, 83, 120);
 }
 
-.y-input-select{
-    padding:10px;
-    border:solid 3px gray;
+.y-input-select {
+    padding: 10px;
+    border: solid 3px gray;
     font-family: "Microsoft Yahei UI", "Segoe UI", sans-serif;
     width: 15vw;
 }
 
-.y-checkbox:hover,.y-checkbox:checked:hover, .y-input-select:hover{
+.y-checkbox:hover, .y-checkbox:checked:hover, .y-input-select:hover {
     border-color: black;
 }
 
-.y-toggle{
+.y-toggle {
     appearance: none;
     vertical-align: middle;
 }
 
-.y-toggle:before{
+.y-toggle:before {
     display: block;
     content: "";
-    width:40px;
-    height:14px;
+    width: 40px;
+    height: 14px;
     border-radius: 10px;
-    border:solid 3px rgb(94, 94, 94);
+    border: solid 3px rgb(94, 94, 94);
 }
 
-.y-toggle:hover:before{
+.y-toggle:hover:before {
     border: solid 3px black;
 }
 
-.y-toggle:after{
-    position:relative;
-    top:-16px;
-    left:4px;
+.y-toggle:after {
+    position: relative;
+    top: -16px;
+    left: 4px;
     content: "";
     display: block;
-    width:12px;
-    height:12px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background-color: black;
 }
 
-.y-toggle:checked:before{
+.y-toggle:checked:before {
     background-color: rgb(6, 83, 120);
     border-color: rgb(6, 83, 120);
 }
 
-.y-toggle:checked:hover:before{
+.y-toggle:checked:hover:before {
     background-color: rgb(56, 135, 172);
     border-color: rgb(56, 135, 172);
 }
 
-.y-toggle:checked:after{
+.y-toggle:checked:after {
     left: 26px;
     background-color: white;
+}
+
+.y-toggle+.y-toggletext:before {
+    content: "关";
+}
+
+.y-toggle:checked+.y-toggletext:before {
+    content: "开";
 }
