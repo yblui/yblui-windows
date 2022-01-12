@@ -71,6 +71,11 @@
     font-size: large;
 }
 
+.y-head3 {
+    font-weight: normal;
+    font-size: 105%;
+}
+
 .y-link {
     cursor: pointer;
     color: rgb(6, 83, 120);
@@ -237,4 +242,33 @@
 
 .y-toggle:checked+.y-toggletext:before {
     content: "开";
+}
+
+.y-radio {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: solid 3px rgb(94, 94, 94);
+    vertical-align: middle;
+}
+
+.y-radio:not(:checked):hover {
+    border: solid 3px black;
+}
+
+.y-radio:checked:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    top: 2.5px;
+    left: 2.5px;
+}
+
+.y-radio:checked {
+    border: solid 3px rgb(6, 83, 120);
 }
