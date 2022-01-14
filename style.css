@@ -122,11 +122,11 @@
 .y-range {
     appearance: none;
     width: 30vw;
+    background-image:linear-gradient(90deg, rgb(6, 83, 120) 0%, rgb(6,83,120) 50%, lightgray 50%);
 }
 
 .y-range::-webkit-slider-runnable-track {
     appearance: none;
-    background-color: lightgray;
     height: 5px;
 }
 

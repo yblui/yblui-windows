@@ -7,6 +7,10 @@ for (var y of document.querySelectorAll(".y-max")) {
 for (var w of document.querySelectorAll(".y-windows")) {
     eventListenerFocus(w);
 }
+for (var k of document.querySelectorAll(".y-range")) {
+    eventListenerRange(k);
+    rangeChange(k);
+}
 $(".y-windows").draggable({
     cancel: ".y-flex",
     containment: "document",
@@ -29,6 +33,12 @@ function eventListenerMax(n) {
 function eventListenerFocus(r) {
     r.addEventListener("click", function () {
         yfocus(r);
+    })
+}
+
+function eventListenerRange(l) {
+    l.addEventListener("input", function () {
+        rangeChange(l);
     })
 }
 
@@ -58,4 +68,15 @@ function max(q) {
 function yfocus(focusElm) {
     z += 100;
     focusElm.style.zIndex = z;
+}
+
+function rangeChange(rangeElm) {
+    var arr = [], u = 0;
+    for (var t of document.getElementsByClassName("y-range")) {
+        arr[u] = t;
+        u++;
+    }
+    var percentage = (Number(rangeElm.value) - Number(rangeElm.min)) / (Number(rangeElm.max) - Number(rangeElm.min)) * 100;
+    document.querySelector(".y-range:nth-of-type(" + (arr.indexOf(rangeElm) + 1) + ")").style.backgroundImage =
+        "linear-gradient(90deg, rgb(6, 83, 120) 0%, rgb(6, 83, 120) " + percentage + "%, lightgray " + percentage + "%)";
 }
