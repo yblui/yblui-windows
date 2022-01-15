@@ -121,8 +121,9 @@
 
 .y-range {
     appearance: none;
-    width: 30vw;
-    background-image:linear-gradient(90deg, rgb(6, 83, 120) 0%, rgb(6,83,120) 50%, lightgray 50%);
+    max-width: 100%;
+    min-width: 20vw;
+    background-image: linear-gradient(90deg, rgb(6, 83, 120) 0%, rgb(6, 83, 120) 50%, lightgray 50%);
 }
 
 .y-range::-webkit-slider-runnable-track {
@@ -271,4 +272,16 @@
 
 .y-radio:checked {
     border: solid 3px rgb(6, 83, 120);
+}
+
+@media screen and (min-width: 900px) {
+    .y-container {
+        display: flex;
+    }
+    .y-sidebar h1{
+        font-size: medium;
+    }
+    .y-sidebar p{
+        color:gray
+    }
 }
