@@ -44,14 +44,13 @@
 .y-flex {
     display: flex;
     flex-direction: row;
-    height: calc(100% - 7vmin);
+    height: calc(100% - 30px);
 }
 
 .y-menu {
     background-color: rgb(236, 236, 236);
     min-width: 15vw;
-    height: 100%;
-    padding: 10px;
+    height: calc(100% + 7px);
     position: relative;
     left: -10px;
     top: 7px;
@@ -59,6 +58,7 @@
 
 .y-container, .y-menu {
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .y-head {
@@ -87,11 +87,12 @@
 
 .y-mtitle {
     font-weight: bold;
+    padding:10px;
 }
 
 .y-item {
     margin: 0;
-    padding: 10px 0;
+    padding: 10px;
 }
 
 .y-item:hover {
@@ -105,9 +106,10 @@
 .y-search {
     border: solid 3px gray;
     padding: 5px;
+    margin:10px;
     font-family: "Microsoft Yahei UI", "Segoe UI", sans-serif;
     outline: none;
-    width: calc(15vw - 20px);
+    width: calc(15vw - 40px);
 }
 
 .y-search:focus {
@@ -182,7 +184,7 @@
 }
 
 .y-input-select {
-    padding: 10px;
+    padding: 5px 10px;
     border: solid 3px gray;
     font-family: "Microsoft Yahei UI", "Segoe UI", sans-serif;
     width: 15vw;
@@ -278,10 +280,36 @@
     .y-container {
         display: flex;
     }
-    .y-sidebar h1{
+
+    .y-sidebar h1 {
         font-size: medium;
     }
-    .y-sidebar p{
-        color:gray
+
+    .y-sidebar p {
+        color: gray
     }
+}
+
+.y-button-large {
+    height: 65px;
+    min-width: 300px;
+    border: none;
+    background-color: white;
+    text-align: left;
+    font-size: medium;
+    font-family: "Microsoft Yahei UI", "Segoe UI", sans-serif;
+    line-height: 0.3;
+    padding-left:50px;
+}
+
+.y-button-large:hover {
+    background-color: rgb(238, 236, 236);
+}
+
+.y-button-large:active {
+    background-color: lightgray;
+}
+
+.y-description {
+    color:gray
 }
