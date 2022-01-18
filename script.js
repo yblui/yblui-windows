@@ -47,6 +47,12 @@ function select(element) {
         a.classList.remove("y-select");
     }
     element.classList.add("y-select");
+    for (var o of element.parentNode.parentNode.getElementsByClassName("y-container")) {
+        o.style.display = "none";
+        if (o.dataset.for == element.innerText) {
+            o.style.display = "block";
+        }
+    }
 }
 
 function max(q) {

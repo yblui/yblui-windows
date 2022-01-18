@@ -61,6 +61,10 @@
     overflow-x: hidden;
 }
 
+.y-container:not(:nth-of-type(2)) {
+    display: none;
+}
+
 .y-head {
     font-size: x-large;
     font-weight: normal;
@@ -87,7 +91,7 @@
 
 .y-mtitle {
     font-weight: bold;
-    padding:10px;
+    padding: 10px;
 }
 
 .y-item {
@@ -106,7 +110,7 @@
 .y-search {
     border: solid 3px gray;
     padding: 5px;
-    margin:10px;
+    margin: 10px;
     font-family: "Microsoft Yahei UI", "Segoe UI", sans-serif;
     outline: none;
     width: calc(15vw - 40px);
@@ -197,6 +201,7 @@
 .y-toggle {
     appearance: none;
     vertical-align: middle;
+    height: 20px;
 }
 
 .y-toggle:before {
@@ -286,7 +291,7 @@
     }
 
     .y-sidebar p {
-        color: gray
+        color: gray;
     }
 }
 
@@ -299,7 +304,7 @@
     font-size: medium;
     font-family: "Microsoft Yahei UI", "Segoe UI", sans-serif;
     line-height: 0.3;
-    padding-left:50px;
+    padding-left: 50px;
 }
 
 .y-button-large:hover {
@@ -311,5 +316,9 @@
 }
 
 .y-description {
-    color:gray
+    color: gray;
+}
+
+.y-main {
+    min-width: 30vw;
 }
