@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yblui-windows</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="yblui-windows.css" />
     <script src="https://cdn.staticfile.org/jquery/1.10.0/jquery.min.js"
         integrity="sha384-sRaSBh4/biaPOg3bm/6H8MNYnWcEcqKm7LaCyGF6xf47EYpW7ITYRwMLOX3gQ7T6"
         crossorigin="anonymous"></script>
@@ -89,6 +89,8 @@
                     <label>
                         <input type="radio" name="radio" class="y-radio" /> Radio 3
                     </label>
+                    <br />
+                    <progress value="60" max="100" class="y-progress"></progress>
                 </div>
             </div>
             <div class="y-container" data-for="Videos">
@@ -124,7 +126,7 @@
                 <p class="y-mtitle">Menu</p>
                 <p class="y-item y-select" onclick="select(this);">Images</p>
             </div>
-            <div class="y-container">
+            <div class="y-container" data-for="Images">
                 <div class="y-main">
                     <h1 class="y-head">The Second Window</h1>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, quisquam laborum?
@@ -133,6 +135,7 @@
         </div>
     </div>
     <strong>使用了：</strong> JQuery-UI
+    <script src="yblui-windows.js"></script>
     <script src="script.js"></script>
 </body>
 

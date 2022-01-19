@@ -322,3 +322,18 @@
 .y-main {
     min-width: 30vw;
 }
+
+.y-progress {
+    appearance: none;
+}
+
+.y-progress::-webkit-progress-bar {
+    max-width: 500px;
+    width: 20vw;
+    height: 10px;
+    background-color: lightgray;
+}
+
+.y-progress::-webkit-progress-value {
+    background-color: rgb(6, 83, 120);
+}
