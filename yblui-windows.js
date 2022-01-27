@@ -94,9 +94,7 @@ function compile(jsonObject) {
         return txt;
     } else if (typeof jsonObject == "object") {
         var v = "<" + jsonObject.element;
-        if (jsonObject.element == "h1") v += " class='y-head'";
-        if (jsonObject.element == "h2") v += " class='y-head2'";
-        if (jsonObject.element == "h3") v += " class='y-head3'";
+        v += elementType(jsonObject.element);
         for (var g in jsonObject) {
             if (g != "element" && g != "text") v += " " + g + "='" + jsonObject[g] + "'";
         }
@@ -104,6 +102,13 @@ function compile(jsonObject) {
         return v;
     }
     return jsonObject;
+}
+
+function elementType(u) {
+    if (u == "h1") return " class='y-head'";
+    if (u == "h2") return " class='y-head2'";
+    if (u == "h3") return " class='y-head3'";
+    else return "";
 }
 
 function createWindow(cw) {

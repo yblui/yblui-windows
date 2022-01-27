@@ -1,148 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="yblui-windows" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yblui-windows</title>
-    <link rel="stylesheet" href="yblui-windows.css" />
-    <script src="https://cdn.staticfile.org/jquery/1.10.0/jquery.min.js"
-        integrity="sha384-sRaSBh4/biaPOg3bm/6H8MNYnWcEcqKm7LaCyGF6xf47EYpW7ITYRwMLOX3gQ7T6"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.staticfile.org/jqueryui/1.10.0/jquery-ui.min.js"
-        integrity="sha384-ix28Irr2dbchbFNzQdAYX86Te9JUFLgseQJ9gkmA1HZTuVtk0+ZGkBzn7E284OTd"
-        crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="favicon.png" />
 </head>
 
 <body>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, quisquam laborum? Culpa nobis ab iusto molestiae
-        quis blanditiis enim possimus praesentium rerum non qui, nisi impedit obcaecati officia harum dolorum?</p>
-    <button onclick="addWindow();">打开新窗口</button>
-    <div class="y-windows">
-        <span class="y-title" ondblclick="max(this.parentNode);">Yblui Windows Demo</span>
-        <div class="y-buttons">
-            <span class="y-max">Maximize</span>
-            <span class="y-close">Close</span>
-        </div>
-        <div class="y-flex">
-            <div class="y-menu">
-                <p class="y-item">Homepage</p>
-                <input type="text" class="y-search" placeholder="Search..." />
-                <p class="y-mtitle">Menu</p>
-                <p class="y-item y-select" onclick="select(this);">Images</p>
-                <p class="y-item" onclick="select(this);">Videos</p>
-                <p class="y-item" onclick="select(this);">Travel</p>
-            </div>
-            <div class="y-container" data-for="Images">
-                <div class="y-main">
-                    <h1 class="y-head">My Heading</h1>
-                    <h2 class="y-head2">My Heading</h2>
-                    <h3 class="y-head3">My Heading</h3>
-                    <button class="y-button">Click the Button</button>
-                    <br />
-                    <button class="y-button-large">
-                        <p class="y-button-title">Click the Button</p>
-                        <p class="y-description">Description.</p>
-                    </button>
-                    <br />
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, quisquam laborum? Culpa nobis ab
-                    iusto molestiae quis blanditiis enim possimus praesentium rerum non qui, nisi impedit obcaecati
-                    officia harum dolorum?
-                    <br />
-                    <br />
-                    Link: <span class="y-link">Quam eum ex iure harum quis fugiat veritatis modi nemo!</span>
-                    <p class="y-light">Amet quo asperiores, omnis temporibus, rerum eius nemo aliquam, eos aut suscipit
-                        voluptatum dolor non maxime?</p>
-                    <p class="y-warning">Necessitatibus delectus eveniet facilis dolorem error quas mollitia itaque,
-                        accusamus hic ratione ad commodi nisi dicta?</p>
-                    <label>
-                        Input Range:
-                        <input type="range" class="y-range" min="0" max="100" value="40" />
-                    </label>
-                    <br />
-                    <label>
-                        Checkbox 1:
-                        <input type="checkbox" class="y-checkbox" />
-                    </label>
-                    <br />
-                    <label>
-                        Checkbox 2:
-                        <input type="checkbox" class="y-toggle" />
-                        <span class="y-toggletext"></span>
-                    </label>
-                    <br />
-                    <label>Select:
-                        <select class="y-input-select">
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                            <option>Option 3</option>
-                        </select>
-                    </label>
-                    <br />
-                    <label>
-                        <input type="radio" name="radio" class="y-radio" checked="checked" /> Radio 1
-                    </label>
-                    <br />
-                    <label>
-                        <input type="radio" name="radio" class="y-radio" /> Radio 2
-                    </label>
-                    <br />
-                    <label>
-                        <input type="radio" name="radio" class="y-radio" /> Radio 3
-                    </label>
-                    <br />
-                    <progress value="60" max="100" class="y-progress"></progress>
-                </div>
-                <div class="y-sidebar">
-                    Nothing here.
-                </div>
-            </div>
-            <div class="y-container" data-for="Videos">
-                <div class="y-main">
-                    <h1 class="y-head">My Heading</h1>
-                    <p>A, sunt impedit?</p>
-                </div>
-                <div class="y-sidebar">
-                    <h1 class="y-head">Sidebar</h1>
-                    <p>Ab beatae non est rem autem.</p>
-                </div>
-            </div>
-            <div class="y-container" data-for="Travel">
-                <div class="y-main">
-                    <h1 class="y-head">My Heading</h1>
-                    <p>Hello World!</p>
-                </div>
-                <div class="y-sidebar">
-                    <h1 class="y-head">Sidebar</h1>
-                    <p>Ab beatae non est rem autem.</p>
-                </div>
-            </div>
-        </div>
+    <h1>Yblui-windows</h1>
+    <div>
+        <p>Yblui</p>
+        <p>Webdows._</p>
     </div>
-    <div class="y-windows">
-        <span class="y-title" ondblclick="max(this.parentNode);">The Second Window</span>
-        <div class="y-buttons">
-            <span class="y-max">Maximize</span>
-            <span class="y-close">Close</span>
-        </div>
-        <div class="y-flex">
-            <div class="y-menu">
-                <p class="y-mtitle">Menu</p>
-                <p class="y-item y-select" onclick="select(this);">Images</p>
-            </div>
-            <div class="y-container" data-for="Images">
-                <div class="y-main">
-                    <h1 class="y-head">The Second Window</h1>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam, quisquam laborum?
-                </div>
-            </div>
-        </div>
+    <div>
+        <p>Yblui</p>
+        <p>Ultrasearch._</p>
     </div>
-    <strong>使用了：</strong> JQuery-UI
-    <script src="yblui-windows.js"></script>
-    <script src="script.js"></script>
+    <div>
+        <p>Yblui</p>
+        <p>Kitboard._</p>
+    </div>
 </body>
 
 </html>
