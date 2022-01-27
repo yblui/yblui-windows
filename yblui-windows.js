@@ -90,23 +90,20 @@ function rangeChange(rangeElm) {
 function compile(jsonObject) {
     if (Array.isArray(jsonObject)) {
         var txt = "";
-        for (var f of jsonObject) {
-            txt += compile(f);
-        }
+        for (var f of jsonObject) txt += compile(f);
         return txt;
-    } else if (typeof jsonObject === "object") {
-        if (jsonObject.type == "heading") {
-            return "<h1 class='y-head'>" + compile(jsonObject.text) + "</h1>";
-        } else if (jsonObject.type == "paragraph") {
-            return "<p>" + compile(jsonObject.text) + "</p>";
-        } else if (jsonObject.type == "break") {
-            return "<br />";
-        } else {
-            return "<" + jsonObject.type + ">" + compile(jsonObject.text) + "</" + jsonObject.type + ">";
+    } else if (typeof jsonObject == "object") {
+        var v = "<" + jsonObject.element;
+        if (jsonObject.element == "h1") v += " class='y-head'";
+        if (jsonObject.element == "h2") v += " class='y-head2'";
+        if (jsonObject.element == "h3") v += " class='y-head3'";
+        for (var g in jsonObject) {
+            if (g != "element" && g != "text") v += " " + g + "='" + jsonObject[g] + "'";
         }
-    } else {
-        return jsonObject;
+        v += ">" + compile(jsonObject.text) + "</" + jsonObject.element + ">";
+        return v;
     }
+    return jsonObject;
 }
 
 function createWindow(cw) {
@@ -122,9 +119,14 @@ function createWindow(cw) {
         contentText += '<div class="y-container" data-for="' + v.for + '"><div class="y-main">' + compile(v.container) + '</div>' +
             '<div class="y-sidebar">' + compile(v.sidebar) + '</div></div>'
     }
-    document.getElementsByTagName("body")[0].innerHTML += '<div class="y-windows" id="' + cw.id + '">' +
+    document.getElementsByTagName("body")[0].innerHTML += '<div class="y-windows" id="' + cw.id + '" onclick="yfocus(this);">' +
         '<span class="y-title" ondblclick="max(this.parentNode);">' + cw.title + '</span><div class="y-buttons">' +
-        '<span class="y-max">Maximize</span><span class="y-close">Close</span></div><div class="y-flex"><div class="y-menu">' +
+        '<span class="y-max" onclick="max(this.parentNode.parentNode);">Maximize</span><span class="y-close" onclick="this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);">Close</span></div><div class="y-flex"><div class="y-menu">' +
         '<p class="y-item">Homepage</p><input type="text" class="y-search" placeholder="Search..." />' +
-        '<p class="y-mtitle">Menu</p>' + menuText + '</div>' + contentText + '</div></div>'
+        '<p class="y-mtitle">Menu</p>' + menuText + '</div>' + contentText + '</div></div>';
+    $(".y-windows").draggable({
+        cancel: ".y-flex",
+        containment: "document",
+        distance: 10
+    });
 }

@@ -7,36 +7,32 @@ function addWindow() {
             for: "Item 1",
             container: [
                 {
-                    type: "heading",
+                    element: "h1",
                     text: "Item 1"
                 }, {
-                    type: "paragraph",
+                    element: "p",
                     text: "My Window."
                 }
             ],
             sidebar: [
                 {
-                    type: "heading",
+                    element: "h1",
                     text: "My Sidebar"
                 }, {
-                    type: "paragraph",
+                    element: "p",
                     text: "Lorem ipsum dolor sit amet, consetetur adipiscing elit."
                 }
             ]
         }, {
             for: "Item 2",
-            container: [
-                {
-                    type: "paragraph",
-                    text: "Nothing here"
-                }
-            ],
-            sidebar: [
-                {
-                    type: "paragraph",
-                    text: "Nothing here"
-                }
-            ]
+            container: {
+                element: "p",
+                text: "Nothing here"
+            },
+            sidebar: {
+                element: "p",
+                text: "Nothing here"
+            }
         }]
     })
 }
