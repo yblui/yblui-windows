@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.0/jquery.min.js"
+        integrity="sha384-sRaSBh4/biaPOg3bm/6H8MNYnWcEcqKm7LaCyGF6xf47EYpW7ITYRwMLOX3gQ7T6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.staticfile.org/jqueryui/1.10.0/jquery-ui.min.js"
+        integrity="sha384-ix28Irr2dbchbFNzQdAYX86Te9JUFLgseQJ9gkmA1HZTuVtk0+ZGkBzn7E284OTd"
+        crossorigin="anonymous"></script>
+    <title>Yblui Kitboard</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        #text {
+            padding: 9px !important;
+            height: 300px !important;
+            resize: none;
+            top: 0;
+            left: 0;
+            width: calc(100% - 30px) !important;
+            font-size: 30pt;
+            overflow-y: auto;
+        }
+
+        input,
+        #text {
+            transition: 0.3s;
+            width: 90px;
+            height: 90px;
+            background-color: white;
+            border: solid 1px gray;
+            margin: 3px;
+            font-size: 30pt;
+            border-radius: 9px;
+            outline: none;
+            padding: 0;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        input[value]:hover {
+            transition: 0.3s;
+            background-color: skyblue;
+            color: white;
+            border: solid 1px transparent;
+            cursor: pointer
+        }
+
+        #keyboard {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: calc(100% - 326px)
+        }
+
+        input {
+            transition: 0.3s;
+            width: 5.8%;
+            height: 20%;
+            margin: 0;
+            font-size: 40px;
+        }
+
+        @media screen and (max-width:900px) {
+            input {
+                font-size: 20px;
+            }
+        }
+
+        input[value="BkSp"] {
+            width: 11.6%;
+        }
+
+        input[value="Space"] {
+            width: calc(36.25% + 18px)
+        }
+
+        .tab {
+            width: 8.7%
+        }
+
+        .control {
+            width: calc(7.25% + 0.75px);
+            background-color: lightgray;
+        }
+
+        .caps {
+            width: 10.15%
+        }
+
+        .leftshift {
+            width: 13.05%
+        }
+
+        .rightshift {
+            width: calc(15.95% + 6px)
+        }
+
+        .enter {
+            width: calc(13.05% + 3px)
+        }
+
+        @keyframes abc {
+            0% {
+                right: 0;
+                box-shadow: 0 18px 18px gray;
+                opacity: 1
+            }
+
+            80% {
+                right: 10%;
+                box-shadow: 0 18px 18px gray;
+                opacity: 0.9
+            }
+
+            100% {
+                right: 100%;
+                box-shadow: none;
+                opacity: 0
+            }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 30pt;
+            position: absolute;
+            bottom: 50%;
+            width: 100%
+        }
+
+        p {
+            text-align: center;
+            font-size: 20pt;
+            position: absolute;
+            top: 50%;
+            width: calc(100% - 180px);
+            margin: 0 90px;
+        }
+
+        span {
+            font-size: 30pt;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id="text" readonly="readonly"></textarea>
+    <div id="keyboard">
+        <input type="button" value="`" id="aa" onclick="inpnum('~','`')" />
+        <input type="button" value="1" id="one" onclick="inpnum('!','1')" />
+        <input type="button" value="2" id="two" onclick="inpnum('@','2')" />
+        <input type="button" value="3" id="three" onclick="inpnum('#','3')" />
+        <input type="button" value="4" id="four" onclick="inpnum('$','4')" />
+        <input type="button" value="5" id="five" onclick="inpnum('%','5')" />
+        <input type="button" value="6" id="six" onclick="inpnum('^','6')" />
+        <input type="button" value="7" id="seven" onclick="inpnum('&','7')" />
+        <input type="button" value="8" id="eight" onclick="inpnum('*','8')" />
+        <input type="button" value="9" id="nine" onclick="inpnum('(','9')" />
+        <input type="button" value="0" id="zero" onclick="inpnum(')','0')" />
+        <input type="button" value="-" id="ab" onclick="inpnum('_','-')" />
+        <input type="button" value="=" id="ac" onclick="inpnum('+','=')" />
+        <input type="button" value="BkSp" onclick="bksp()" />
+        <br />
+        <input type="button" value="Tab" onclick="inpo('\t')" class="tab" />
+        <input type="button" value="Q" onclick="inpletter('Q','q')" />
+        <input type="button" value="W" onclick="inpletter('W','w')" />
+        <input type="button" value="E" onclick="inpletter('E','e')" />
+        <input type="button" value="R" onclick="inpletter('R','r')" />
+        <input type="button" value="T" onclick="inpletter('T','t')" />
+        <input type="button" value="Y" onclick="inpletter('Y','y')" />
+        <input type="button" value="U" onclick="inpletter('U','u')" />
+        <input type="button" value="I" onclick="inpletter('I','i')" />
+        <input type="button" value="O" onclick="inpletter('O','o')" />
+        <input type="button" value="P" onclick="inpletter('P','p')" />
+        <input type="button" value="[" id="ad" onclick="inpnum('{','[')" />
+        <input type="button" value="]" id="ae" onclick="inpnum('}',']')" />
+        <input type="button" value="\" id="af" onclick="inpnum('|','\\')" class="tab" />
+        <br />
+        <input type="button" value="Caps" onclick="cpslk()" class="caps" id="cps" />
+        <input type="button" value="A" onclick="inpletter('A','a')" />
+        <input type="button" value="S" onclick="inpletter('S','s')" />
+        <input type="button" value="D" onclick="inpletter('D','d')" />
+        <input type="button" value="F" onclick="inpletter('F','f')" />
+        <input type="button" value="G" onclick="inpletter('G','g')" />
+        <input type="button" value="H" onclick="inpletter('H','h')" />
+        <input type="button" value="J" onclick="inpletter('J','j')" />
+        <input type="button" value="K" onclick="inpletter('K','k')" />
+        <input type="button" value="L" onclick="inpletter('L','l')" />
+        <input type="button" value=";" id="ag" onclick="inpnum(':',';')" />
+        <input type="button" value="'" id="ah" onclick="inpnum('\&quot;','\&apos;')" />
+        <input type="button" value="Enter" onclick="inpo('\r\n')" class="enter" />
+        <br />
+        <input type="button" value="Shift" onclick="shift()" id="shift" class="shift leftshift" />
+        <input type="button" value="Z" onclick="inpletter('Z','z')" />
+        <input type="button" value="X" onclick="inpletter('X','x')" />
+        <input type="button" value="C" onclick="inpletter('C','c')" />
+        <input type="button" value="V" onclick="inpletter('V','v')" />
+        <input type="button" value="B" onclick="inpletter('B','b')" />
+        <input type="button" value="N" onclick="inpletter('N','n')" />
+        <input type="button" value="M" onclick="inpletter('M','m')" />
+        <input type="button" value="," id="ai" onclick="inpnum('<',',')" />
+        <input type="button" value="." id="aj" onclick="inpnum('>','.')" />
+        <input type="button" value="/" id="ak" onclick="inpnum('?','/')" />
+        <input type="button" value="Shift" onclick="shift()" id="rightshift" class="shift rightshift" />
+        <br />
+        <input type="button" value=" " class="control" />
+        <input type="button" value=" " class="control" />
+        <input type="button" value=" " class="control" />
+        <input type="button" value="Space" onclick="inpo(' ')" />
+        <input type="button" value=" " class="control" />
+        <input type="button" value=" " class="control" />
+        <input type="button" value=" " class="control" />
+        <input type="button" value=" " class="control" />
+    </div>
+    <script>
+        var ids = [
+            "#aa", "#ab", "#ac", "#ad", "#ae", "#af", "#ag", "#ah", "#ai",
+            "#aj", "#ak", "#one", "#two", "#three", "#four", "#five",
+            "#six", "#seven", "#eight", "#nine", "#zero"
+        ]
+        var valsa = [
+            "~", "_", "+", "{", "}", "|", ":", "\"", "<", ">", "?", "!",
+            "@", "#", "$", "%", "^", "&", "*", "(", ")"
+        ]
+        var valsb = [
+            "`", "-", "=", "[", "]", "\\", ";", "\'", ",", ".", "/", "1",
+            "2", "3", "4", "5", "6", "7", "8", "9", "0"
+        ]
+        var se, i, va, da = new Date().getTime(),
+            cap = false,
+            lock = false,
+            le = ids.length - 1;
+        var inte = setInterval(function () {
+            se = (4000 - (new Date().getTime() - da)) / 1000;
+            if (se <= 0) clearInterval(inte);
+            $("#secs").text(se.toFixed(2) + "s");
+        }, 10)
+        function chc() {
+            if (cap) {
+                $(".shift").css({
+                    "background-color": "skyblue",
+                    "color": "white"
+                })
+                for (i = 0; i <= le; i++) {
+                    $(ids[i]).val(valsa[i])
+                }
+            } else {
+                $(".shift").css({
+                    "background-color": "white",
+                    "color": "black"
+                })
+                for (i = 0; i <= le; i++) {
+                    $(ids[i]).val(valsb[i])
+                }
+            }
+            if (lock) {
+                $("#cps").css({
+                    "background-color": "skyblue",
+                    "color": "white"
+                })
+            } else {
+                $("#cps").css({
+                    "background-color": "white",
+                    "color": "black"
+                })
+            }
+        }
+
+        function inpo(c) {
+            $("#text").val($("#text").val() + c);
+        }
+
+        function inpnum(u, d) {
+            va = $("#text").val();
+            if (cap) {
+                $("#text").val(va + u);
+            } else {
+                $("#text").val(va + d);
+            }
+            cap = false;
+            chc()
+        }
+
+        function inpletter(u, d) {
+            va = $("#text").val();
+            if (cap != lock) {
+                $("#text").val(va + u);
+            } else {
+                $("#text").val(va + d);
+            }
+            cap = false;
+            chc()
+        }
+
+        function cpslk() {
+            if (lock == true) {
+                lock = false;
+            } else {
+                lock = true;
+            }
+            chc()
+        }
+
+        function shift() {
+            if (cap) {
+                cap = false;
+            } else {
+                cap = true;
+            }
+            chc()
+        }
+
+        function bksp() {
+            va = $("#text").val();
+            $("#text").val(va.substr(0, va.length - 1))
+        }
+    </script>
+</body>
+
+</html>
