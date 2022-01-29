@@ -17,7 +17,7 @@
             height: 100%;
             margin: 0;
             overflow-x: hidden;
-            font-family: "Montserrat", sans-serif;
+            font-family: "Segoe UI", sans-serif;
         }
 
         #text {
@@ -33,21 +33,18 @@
 
         input,
         #text {
-            transition: 0.3s;
             width: 90px;
             height: 90px;
             background-color: white;
             border: solid 1px gray;
             margin: 3px;
             font-size: 30pt;
-            border-radius: 9px;
             outline: none;
             padding: 0;
-            font-family: "Montserrat", sans-serif;
+            font-family: "Segoe UI", sans-serif;
         }
 
         input[value]:hover {
-            transition: 0.3s;
             background-color: skyblue;
             color: white;
             border: solid 1px transparent;
@@ -62,7 +59,6 @@
         }
 
         input {
-            transition: 0.3s;
             width: 5.8%;
             height: 20%;
             margin: 0;
@@ -76,15 +72,15 @@
         }
 
         input[value="BkSp"] {
-            width: 11.6%;
+            width: 11.6%!important;
         }
 
         input[value="Space"] {
-            width: calc(36.25% + 18px)
+            width: calc(36.25% + 18px)!important;
         }
 
         .tab {
-            width: 8.7%
+            width: 8.7%!important;
         }
 
         .control {
@@ -93,19 +89,19 @@
         }
 
         .caps {
-            width: 10.15%
+            width: 10.15%!important
         }
 
         .leftshift {
-            width: 13.05%
+            width: 13.05%!important
         }
 
         .rightshift {
-            width: calc(15.95% + 6px)
+            width: calc(15.95% + 6px)!important
         }
 
         .enter {
-            width: calc(13.05% + 3px)
+            width: calc(13.05% + 3px)!important
         }
 
         @keyframes abc {
@@ -167,9 +163,9 @@
         <input type="button" value="0" id="zero" onclick="inpnum(')','0')" />
         <input type="button" value="-" id="ab" onclick="inpnum('_','-')" />
         <input type="button" value="=" id="ac" onclick="inpnum('+','=')" />
-        <input type="button" value="BkSp" onclick="bksp()" />
+        <input type="button" value="BkSp" onclick="bksp()" class="control" />
         <br />
-        <input type="button" value="Tab" onclick="inpo('\t')" class="tab" />
+        <input type="button" value="Tab" onclick="inpo('\t')" class="tab control" />
         <input type="button" value="Q" onclick="inpletter('Q','q')" />
         <input type="button" value="W" onclick="inpletter('W','w')" />
         <input type="button" value="E" onclick="inpletter('E','e')" />
@@ -184,7 +180,7 @@
         <input type="button" value="]" id="ae" onclick="inpnum('}',']')" />
         <input type="button" value="\" id="af" onclick="inpnum('|','\\')" class="tab" />
         <br />
-        <input type="button" value="Caps" onclick="cpslk()" class="caps" id="cps" />
+        <input type="button" value="Caps" onclick="cpslk()" class="caps control" id="cps" />
         <input type="button" value="A" onclick="inpletter('A','a')" />
         <input type="button" value="S" onclick="inpletter('S','s')" />
         <input type="button" value="D" onclick="inpletter('D','d')" />
@@ -196,9 +192,9 @@
         <input type="button" value="L" onclick="inpletter('L','l')" />
         <input type="button" value=";" id="ag" onclick="inpnum(':',';')" />
         <input type="button" value="'" id="ah" onclick="inpnum('\&quot;','\&apos;')" />
-        <input type="button" value="Enter" onclick="inpo('\r\n')" class="enter" />
+        <input type="button" value="Enter" onclick="inpo('\r\n')" class="enter control" />
         <br />
-        <input type="button" value="Shift" onclick="shift()" id="shift" class="shift leftshift" />
+        <input type="button" value="Shift" onclick="shift()" id="shift" class="shift leftshift control" />
         <input type="button" value="Z" onclick="inpletter('Z','z')" />
         <input type="button" value="X" onclick="inpletter('X','x')" />
         <input type="button" value="C" onclick="inpletter('C','c')" />
@@ -209,16 +205,16 @@
         <input type="button" value="," id="ai" onclick="inpnum('<',',')" />
         <input type="button" value="." id="aj" onclick="inpnum('>','.')" />
         <input type="button" value="/" id="ak" onclick="inpnum('?','/')" />
-        <input type="button" value="Shift" onclick="shift()" id="rightshift" class="shift rightshift" />
+        <input type="button" value="Shift" onclick="shift()" id="rightshift" class="shift rightshift control" />
         <br />
-        <input type="button" value=" " class="control" />
-        <input type="button" value=" " class="control" />
-        <input type="button" value=" " class="control" />
+        <input type="button" value="Ctrl" class="control" />
+        <input type="button" value="Win" class="control" />
+        <input type="button" value="Alt" class="control" />
         <input type="button" value="Space" onclick="inpo(' ')" />
-        <input type="button" value=" " class="control" />
-        <input type="button" value=" " class="control" />
-        <input type="button" value=" " class="control" />
-        <input type="button" value=" " class="control" />
+        <input type="button" value="Alt" class="control" />
+        <input type="button" value="Win" class="control" />
+        <input type="button" value="Menu" class="control" />
+        <input type="button" value="Ctrl" class="control" />
     </div>
     <script>
         var ids = [
