@@ -12,57 +12,32 @@
         crossorigin="anonymous"></script>
     <title>Yblui Kitboard</title>
     <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            overflow-x: hidden;
-            font-family: "Segoe UI", sans-serif;
-        }
-
-        #text {
-            padding: 9px !important;
-            height: 300px !important;
-            resize: none;
-            top: 0;
-            left: 0;
-            width: calc(100% - 30px) !important;
-            font-size: 30pt;
-            overflow-y: auto;
-        }
-
-        input,
-        #text {
-            width: 90px;
-            height: 90px;
+        input {
             background-color: white;
-            border: solid 1px gray;
-            margin: 3px;
-            font-size: 30pt;
+            border: none;
+            font-size: 20pt;
             outline: none;
             padding: 0;
             font-family: "Segoe UI", sans-serif;
+            width: 5vw;
+            height: 4vw;
+            margin: 3px 0;
         }
 
         input[value]:hover {
-            background-color: skyblue;
-            color: white;
+            background-color: rgb(241, 241, 241);
             border: solid 1px transparent;
-            cursor: pointer
         }
 
         #keyboard {
             position: absolute;
             bottom: 0;
-            width: 100%;
-            height: calc(100% - 326px)
+            background-color: rgb(222, 222, 222);
+            font-family: "Segoe UI", sans-serif;
         }
 
-        input {
-            width: 5.8%;
-            height: 20%;
-            margin: 0;
-            font-size: 40px;
+        .control:hover {
+            background-color: rgb(222, 222, 222) !important;
         }
 
         @media screen and (max-width:900px) {
@@ -72,36 +47,31 @@
         }
 
         input[value="BkSp"] {
-            width: 11.6%!important;
+            width: 7.5vw;
         }
 
         input[value="Space"] {
-            width: calc(36.25% + 18px)!important;
+            width: 25vw !important;
         }
 
         .tab {
-            width: 8.7%!important;
+            width: 7.5vw;
         }
 
         .control {
-            width: calc(7.25% + 0.75px);
-            background-color: lightgray;
+            background-color: rgb(241, 241, 241);
         }
 
         .caps {
-            width: 10.15%!important
+            width: 8.75vw;
         }
 
         .leftshift {
-            width: 13.05%!important
+            width: 11.25vw;
         }
 
         .rightshift {
-            width: calc(15.95% + 6px)!important
-        }
-
-        .enter {
-            width: calc(13.05% + 3px)!important
+            width: 11.25vw;
         }
 
         @keyframes abc {
@@ -144,11 +114,18 @@
         span {
             font-size: 30pt;
         }
+
+        .backsp {
+            width: 7.5vw;
+        }
     </style>
 </head>
 
 <body>
-    <textarea id="text" readonly="readonly"></textarea>
+    <label>
+        Textarea:
+        <textarea id="text" placeholder="Enter text here"></textarea>
+    </label>
     <div id="keyboard">
         <input type="button" value="`" id="aa" onclick="inpnum('~','`')" />
         <input type="button" value="1" id="one" onclick="inpnum('!','1')" />
@@ -163,7 +140,7 @@
         <input type="button" value="0" id="zero" onclick="inpnum(')','0')" />
         <input type="button" value="-" id="ab" onclick="inpnum('_','-')" />
         <input type="button" value="=" id="ac" onclick="inpnum('+','=')" />
-        <input type="button" value="BkSp" onclick="bksp()" class="control" />
+        <input type="button" value="BkSp" onclick="bksp()" class="backsp control" />
         <br />
         <input type="button" value="Tab" onclick="inpo('\t')" class="tab control" />
         <input type="button" value="Q" onclick="inpletter('Q','q')" />
@@ -178,7 +155,7 @@
         <input type="button" value="P" onclick="inpletter('P','p')" />
         <input type="button" value="[" id="ad" onclick="inpnum('{','[')" />
         <input type="button" value="]" id="ae" onclick="inpnum('}',']')" />
-        <input type="button" value="\" id="af" onclick="inpnum('|','\\')" class="tab" />
+        <input type="button" value="\" id="af" onclick="inpnum('|','\\')" />
         <br />
         <input type="button" value="Caps" onclick="cpslk()" class="caps control" id="cps" />
         <input type="button" value="A" onclick="inpletter('A','a')" />
@@ -192,7 +169,7 @@
         <input type="button" value="L" onclick="inpletter('L','l')" />
         <input type="button" value=";" id="ag" onclick="inpnum(':',';')" />
         <input type="button" value="'" id="ah" onclick="inpnum('\&quot;','\&apos;')" />
-        <input type="button" value="Enter" onclick="inpo('\r\n')" class="enter control" />
+        <input type="button" value="Enter" onclick="inpo('\r\n')" class="caps control" />
         <br />
         <input type="button" value="Shift" onclick="shift()" id="shift" class="shift leftshift control" />
         <input type="button" value="Z" onclick="inpletter('Z','z')" />
@@ -208,116 +185,18 @@
         <input type="button" value="Shift" onclick="shift()" id="rightshift" class="shift rightshift control" />
         <br />
         <input type="button" value="Ctrl" class="control" />
+        <input type="button" value="Fn" class="control" />
         <input type="button" value="Win" class="control" />
         <input type="button" value="Alt" class="control" />
         <input type="button" value="Space" onclick="inpo(' ')" />
         <input type="button" value="Alt" class="control" />
-        <input type="button" value="Win" class="control" />
-        <input type="button" value="Menu" class="control" />
         <input type="button" value="Ctrl" class="control" />
+        <input type="button" value="Up" class="control" />
+        <input type="button" value="Down" class="control" />
+        <input type="button" value="Left" class="control" />
+        <input type="button" value="Right" class="control" />
     </div>
-    <script>
-        var ids = [
-            "#aa", "#ab", "#ac", "#ad", "#ae", "#af", "#ag", "#ah", "#ai",
-            "#aj", "#ak", "#one", "#two", "#three", "#four", "#five",
-            "#six", "#seven", "#eight", "#nine", "#zero"
-        ]
-        var valsa = [
-            "~", "_", "+", "{", "}", "|", ":", "\"", "<", ">", "?", "!",
-            "@", "#", "$", "%", "^", "&", "*", "(", ")"
-        ]
-        var valsb = [
-            "`", "-", "=", "[", "]", "\\", ";", "\'", ",", ".", "/", "1",
-            "2", "3", "4", "5", "6", "7", "8", "9", "0"
-        ]
-        var se, i, va, da = new Date().getTime(),
-            cap = false,
-            lock = false,
-            le = ids.length - 1;
-        var inte = setInterval(function () {
-            se = (4000 - (new Date().getTime() - da)) / 1000;
-            if (se <= 0) clearInterval(inte);
-            $("#secs").text(se.toFixed(2) + "s");
-        }, 10)
-        function chc() {
-            if (cap) {
-                $(".shift").css({
-                    "background-color": "skyblue",
-                    "color": "white"
-                })
-                for (i = 0; i <= le; i++) {
-                    $(ids[i]).val(valsa[i])
-                }
-            } else {
-                $(".shift").css({
-                    "background-color": "white",
-                    "color": "black"
-                })
-                for (i = 0; i <= le; i++) {
-                    $(ids[i]).val(valsb[i])
-                }
-            }
-            if (lock) {
-                $("#cps").css({
-                    "background-color": "skyblue",
-                    "color": "white"
-                })
-            } else {
-                $("#cps").css({
-                    "background-color": "white",
-                    "color": "black"
-                })
-            }
-        }
-
-        function inpo(c) {
-            $("#text").val($("#text").val() + c);
-        }
-
-        function inpnum(u, d) {
-            va = $("#text").val();
-            if (cap) {
-                $("#text").val(va + u);
-            } else {
-                $("#text").val(va + d);
-            }
-            cap = false;
-            chc()
-        }
-
-        function inpletter(u, d) {
-            va = $("#text").val();
-            if (cap != lock) {
-                $("#text").val(va + u);
-            } else {
-                $("#text").val(va + d);
-            }
-            cap = false;
-            chc()
-        }
-
-        function cpslk() {
-            if (lock == true) {
-                lock = false;
-            } else {
-                lock = true;
-            }
-            chc()
-        }
-
-        function shift() {
-            if (cap) {
-                cap = false;
-            } else {
-                cap = true;
-            }
-            chc()
-        }
-
-        function bksp() {
-            va = $("#text").val();
-            $("#text").val(va.substr(0, va.length - 1))
-        }
+    <script src="yblui-windows.js">
     </script>
 </body>
 

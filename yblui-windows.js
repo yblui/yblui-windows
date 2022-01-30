@@ -135,3 +135,92 @@ function createWindow(cw) {
         distance: 10
     });
 }
+/*** Kitboard ***/
+var ids = [
+    "#aa", "#ab", "#ac", "#ad", "#ae", "#af", "#ag", "#ah", "#ai",
+    "#aj", "#ak", "#one", "#two", "#three", "#four", "#five",
+    "#six", "#seven", "#eight", "#nine", "#zero"
+]
+var valsa = [
+    "~", "_", "+", "{", "}", "|", ":", "\"", "<", ">", "?", "!",
+    "@", "#", "$", "%", "^", "&", "*", "(", ")"
+]
+var valsb = [
+    "`", "-", "=", "[", "]", "\\", ";", "\'", ",", ".", "/", "1",
+    "2", "3", "4", "5", "6", "7", "8", "9", "0"
+]
+var se, i, va,
+    cap = false,
+    lock = false,
+    le = ids.length - 1;
+function chc() {
+    if (cap) {
+        $(".shift").css({
+            "background-color": "skyblue",
+            "color": "white"
+        })
+        for (i = 0; i <= le; i++) {
+            $(ids[i]).val(valsa[i])
+        }
+    } else {
+        $(".shift").css({
+            "background-color": "",
+            "color": ""
+        })
+        for (i = 0; i <= le; i++) {
+            $(ids[i]).val(valsb[i]);
+        }
+    }
+    if (lock) {
+        $("#cps").css({
+            "background-color": "skyblue",
+            "color": "white"
+        })
+    } else {
+        $("#cps").css({
+            "background-color": "",
+            "color": ""
+        })
+    }
+}
+
+function inpo(c) {
+    $("#text").val($("#text").val() + c);
+}
+
+function inpnum(u, d) {
+    va = $("#text").val();
+    if (cap) {
+        $("#text").val(va + u);
+    } else {
+        $("#text").val(va + d);
+    }
+    cap = false;
+    chc()
+}
+
+function inpletter(u, d) {
+    va = $("#text").val();
+    if (cap != lock) {
+        $("#text").val(va + u);
+    } else {
+        $("#text").val(va + d);
+    }
+    cap = false;
+    chc();
+}
+
+function cpslk() {
+    lock = !lock;
+    chc();
+}
+
+function shift() {
+    cap = !cap;
+    chc();
+}
+
+function bksp() {
+    va = $("#text").val();
+    $("#text").val(va.substr(0, va.length - 1));
+}
