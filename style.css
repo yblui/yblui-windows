@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "Ybluifont";
+    src: url("https://yblui.github.io/yblui-font/YbluiFont.ttf");
+}
+
+h1, p {
+    color: white;
+    font-family: "Ybluifont", sans-serif;
+    text-align: center;
+    font-weight: normal;
+    font-size: 30pt;
+    cursor: default;
+}
+
+html {
+    background-color: #111;
+}
+
+.container {
+    margin-top: 20vh;
+    animation: animation 3s ease;
+}
+
+@keyframes animation{
+    0%{
+        opacity:0;
+        margin-top:0;
+        filter:blur(30px);
+    }
+
+    100%{
+        opacity:1;
+        margin-top:20vh;
+        filter:none
+    }
+}

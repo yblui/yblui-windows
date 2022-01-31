@@ -135,7 +135,9 @@ function createWindow(cw) {
         distance: 10
     });
 }
+
 /*** Kitboard ***/
+
 var ids = [
     "#aa", "#ab", "#ac", "#ad", "#ae", "#af", "#ag", "#ah", "#ai",
     "#aj", "#ak", "#one", "#two", "#three", "#four", "#five",
@@ -156,7 +158,7 @@ var se, i, va,
 function chc() {
     if (cap) {
         $(".shift").css({
-            "background-color": "skyblue",
+            "background-color": "rgb(6, 83, 120)",
             "color": "white"
         })
         for (i = 0; i <= le; i++) {
@@ -173,7 +175,7 @@ function chc() {
     }
     if (lock) {
         $("#cps").css({
-            "background-color": "skyblue",
+            "background-color": "rgb(6, 83, 120)",
             "color": "white"
         })
     } else {
@@ -196,7 +198,7 @@ function inpnum(u, d) {
         $("#text").val(va + d);
     }
     cap = false;
-    chc()
+    chc();
 }
 
 function inpletter(u, d) {
